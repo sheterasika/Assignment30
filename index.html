@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 30</title>
+    <style>
+        .text-centre {
+            text-align: center;
+        }
+        .container {
+            height: 380px;
+            width: 300px;
+            background-color: #ccccb3;
+            display: block;
+            margin: 0px auto;
+            border-radius: 20px;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            border: 2px solid #5c5c3d;
+        }
+        .image {
+            height: 180px;
+            display: block;
+            margin: 0px auto;
+        }
+        .increase {
+            height: 25px;
+            cursor: pointer;
+        }
+        .decrease {
+            height: 25px;
+            cursor: pointer;
+        }
+        .quantity-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 150px;
+            margin: 10px auto;
+        }
+        .btn {
+            display: block;
+            margin: 18px auto;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #5c5c3d;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #5c5c3d;
+            transition: 0.3s;
+        }
+        .font {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <div class="container">
+        <img src="./img/img.jfif" id="image" class="image">
+        <p class="text-centre font">Price: ₹200/-</p>
+        <p class="text-centre font">
+            Quantity: <span id="quantity">1</span>
+        </p>
+        <div class="quantity-container">
+            <img src="./img/add.png" id="increase" class="increase" onclick="increment()">
+            <img src="./img/minus.png" id="decrease" class="decrease" onclick="decrement()">
+        </div>
+        <button type="button" id="btn" class="btn">Buy Now</button>
+    </div>
+
+    <script>
+        const quantityElement = document.getElementById("quantity");
+        let quantity = parseInt(quantityElement.innerText);
+        function increment() {
+            quantityElement.innerText = ++quantity;
+        }
+        function decrement() {
+            if (quantity>1) {
+                quantityElement.innerText = --quantity;
+            } 
+        }
+    </script>
+</body>
+</html>
